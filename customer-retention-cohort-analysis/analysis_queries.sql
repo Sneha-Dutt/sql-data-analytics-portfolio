@@ -14,7 +14,7 @@ customer_id,
 MIN(order_purchase_timestamp) AS first_purchase
 FROM orders
 GROUP BY customer_id;
--- --------------------------------------------------------------------------------------------------------------------
+-- 
 create database project1;
 use project1;
 
