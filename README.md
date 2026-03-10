@@ -1,84 +1,39 @@
-# SQL Data Analytics Portfolio
-
-This repository contains SQL-based data analytics projects demonstrating advanced SQL techniques used in real-world data analysis.
-
-The projects focus on customer behavior analysis, cohort retention analysis, revenue analytics, and business insights derived from transactional datasets.
-
----
-
 ## Projects
 
 ### 1. Customer Retention & Cohort Analysis
+Analysis of customer purchasing behavior and retention trends using the Olist Brazilian E-commerce dataset.
 
-**Dataset:** Olist Brazilian E-commerce Dataset
-
-This project analyzes customer purchasing behavior and retention patterns in an e-commerce platform.
-
-Key analyses performed:
-
-* Data exploration of orders and customers
-* Monthly new customer acquisition analysis
-* Customer lifetime value (CLTV) analysis
-* Customer revenue ranking using window functions
-* Cohort retention analysis
-* Cohort retention matrix generation
-
-SQL concepts demonstrated:
-
-* Common Table Expressions (CTEs)
-* Window functions (RANK, NTILE)
-* Aggregation and grouping
-* Date functions
-* Conditional aggregation
-* Customer segmentation
+Key analyses:
+- Customer acquisition trends
+- Customer Lifetime Value (CLTV)
+- Customer revenue ranking
+- Cohort retention analysis
 
 Project folder:
-
-```
 customer-retention-cohort-analysis
-```
 
----
 
-## Key Insights
+### 2. E-commerce Funnel Analysis
+This project analyzes the customer purchase funnel and identifies conversion rates between different stages of the buying process.
 
-* The dataset contains approximately **96,000 unique customers**.
-* The **average customer lifetime value is approximately R$170**.
-* A small percentage of customers generate significantly higher revenue compared to the average customer.
-* The majority of customers place **only one order**, indicating low repeat purchase behavior.
-* The **top 5% of customers contribute a disproportionate share of revenue**, showing a strong revenue concentration pattern.
+Key analyses:
+- Conversion rate calculation
+- Funnel drop-off detection
+- Window function usage
+- Customer journey analysis
 
----
+Project folder:
+ecommerce-funnel-analysis
 
-## Tools Used
 
-* SQL
-* MySQL
-* MySQL Workbench
-* GitHub
+### 3. Instacart Market Basket Analysis
+This project will analyze purchasing patterns and product associations using grocery transaction data.
 
----
+Key analyses:
+- Product co-occurrence patterns
+- Basket size analysis
+- Customer purchase frequency
+- Product popularity analysis
 
-## Dataset Source
-
-Olist Brazilian E-commerce Dataset
-Available on Kaggle:
-
-https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-
----
-
-## Future Projects
-
-The repository will also include:
-
-* E-commerce Funnel Analysis
-* Instacart Market Basket Analysis
-* Advanced SQL Business Case Studies
-
----
-
-## Author
-
-Sneha Dutt
-Data Analytics Portfolio
+Project folder:
+instacart-sales-analysis
