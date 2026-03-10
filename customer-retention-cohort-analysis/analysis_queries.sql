@@ -1,4 +1,4 @@
-## Monthly Orders
+-- Monthly Orders
 
 SELECT
 DATE_FORMAT(order_purchase_timestamp,'%Y-%m') AS month,
