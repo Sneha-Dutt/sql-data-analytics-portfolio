@@ -1,6 +1,6 @@
 Projects
 1. Customer Retention & Cohort Analysis
----
+
 Analyzed customer purchasing behavior and retention trends using the Olist Brazilian E-commerce dataset to understand long-term customer engagement.
 
 Key analyses
@@ -15,9 +15,9 @@ Cohort-based retention analysis to track repeat purchase behavior
 
 Project folder
 customer-retention-cohort-analysis
-
-2. E-commerce Funnel Analysis
 ---
+2. E-commerce Funnel Analysis
+
 Analyzed the customer purchase funnel to measure conversion efficiency and identify drop-off points across the buying journey.
 
 Key analyses
@@ -32,9 +32,9 @@ Use of window functions and aggregations for behavioral analysis
 
 Project folder
 ecommerce-funnel-analysis
-
-3. RFM Customer Segmentation Analysis
 ---
+3. RFM Customer Segmentation Analysis
+
 Performed RFM (Recency, Frequency, Monetary) analysis to segment ~96K customers based on purchasing behavior and identify high-value and churn-risk segments.
 
 Key analyses
