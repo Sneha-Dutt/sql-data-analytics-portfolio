@@ -1,6 +1,13 @@
-# Dataset Description
+# Dataset
 
-This project uses a Brazilian e-commerce dataset.
+Dataset Name:
+Olist Brazilian E-commerce Dataset
+
+Source:
+Kaggle
+
+Link:
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 Tables Used
 
