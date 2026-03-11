@@ -16,7 +16,7 @@ Cohort-based retention analysis to track repeat purchase behavior
 Project folder
 customer-retention-cohort-analysis
 
-2. E-commerce Funnel Analysis
+###2. E-commerce Funnel Analysis
 
 Analyzed the customer purchase funnel to measure conversion efficiency and identify drop-off points across the buying journey.
 
