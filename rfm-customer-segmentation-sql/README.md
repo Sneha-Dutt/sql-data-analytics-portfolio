@@ -54,11 +54,3 @@ Customer-level analytics
 Behavioral segmentation
 
 ---
-
-## Sample Query Output
-
-![RFM Metrics](images/rfm_metrics.png)
-
-![Customer Segments](images/customer_segments.png)
-
-![Revenue Contribution](images/revenue_by_segment.png)
