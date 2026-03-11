@@ -33,7 +33,7 @@ Use of window functions and aggregations for behavioral analysis
 Project folder
 ecommerce-funnel-analysis
 
-#3. RFM Customer Segmentation Analysis
+##3. RFM Customer Segmentation Analysis
 ---
 Performed RFM (Recency, Frequency, Monetary) analysis to segment ~96K customers based on purchasing behavior and identify high-value and churn-risk segments.
 
