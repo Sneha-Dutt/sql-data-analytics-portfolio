@@ -1,19 +1,130 @@
-Insights:
+# RFM Customer Segmentation Insights
 
-1.~96,000 customers were analyzed, with an average customer spending of R$167 and a maximum lifetime value of R$13,664, revealing an ~82× difference between average and top spenders.
+## Dataset Information
+**Dataset:** Olist Brazilian E-commerce Dataset  
+**Source:** Kaggle  
+**Link:** https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce  
 
-2.Customer inactivity exceeds 500 days for some users, indicating the presence of long-dormant customers with high churn risk.
+The dataset contains real e-commerce transaction data from a Brazilian marketplace, including customer information, orders, and payments.  
+This analysis focuses on understanding customer purchasing behavior using **RFM (Recency, Frequency, Monetary) segmentation**.
 
-3.The majority of customers place only 1–2 orders, showing that the business relies heavily on first-time buyers rather than repeat purchasers.
+---
 
-4.RFM scoring segmented customers into 5 equal groups (~20% each) based on Recency, Frequency, and Monetary value.
+# 1. Customer Base Overview
 
-5.Champions (high recency and high frequency) represent the most engaged customer segment, combining recent activity with frequent purchases.
+- The analysis includes **~96,000 unique customers**.
+- The **average revenue per customer is approximately R$167**.
+- The **highest spending customer generated R$13,664.08 in revenue**.
 
-6.Loyal Customers demonstrate consistent repeat purchasing behavior, forming a stable core revenue base for the business.
+### Insight
+Customer spending distribution is **highly skewed**, meaning a small number of customers generate significantly more revenue compared to the average customer.
 
-7.Potential Loyalists have recent purchases but low order frequency, indicating strong potential to convert into loyal repeat buyers.
+### Business Implication
+High-value customers should be prioritized through **loyalty programs, personalized offers, and premium customer experiences**.
 
-8.At-Risk customers show historically high purchasing activity but low recent engagement, making them ideal targets for reactivation campaigns.
+---
 
-9.Customer spending is highly uneven, where a small group of high-value customers generates significantly more revenue than the average customer.
+# 2. Recency Analysis
+
+Recency was calculated as the **number of days since the customer's last purchase** relative to the most recent order in the dataset.
+
+### Key Observations
+- Some customers have **not made a purchase for over 500 days**.
+- These customers are likely **inactive or churned**.
+
+### Insight
+A significant portion of the customer base is **not actively purchasing**, indicating potential customer churn.
+
+### Business Recommendation
+Companies can implement **re-engagement strategies**, such as:
+- Win-back email campaigns
+- Personalized discounts
+- Retargeting advertisements
+
+---
+
+# 3. Purchase Frequency Analysis
+
+Frequency represents the **number of orders placed by each customer**.
+
+### Key Observations
+- Many customers place **only one or two orders**.
+- A smaller group of customers place **multiple orders**, showing higher engagement.
+
+### Insight
+The dataset indicates a **large number of one-time buyers**, suggesting opportunities to improve customer retention.
+
+### Business Recommendation
+Businesses can increase repeat purchases through:
+- Loyalty programs
+- Subscription services
+- Personalized product recommendations
+
+---
+
+# 4. Customer Segmentation Using RFM
+
+Customers were segmented using **RFM scoring** with the `NTILE(5)` function to assign scores from 1–5 based on:
+
+- **Recency** → How recently a customer made a purchase
+- **Frequency** → How often the customer purchases
+- **Monetary** → How much money the customer spends
+
+### Segments Created
+
+| Segment | Description |
+|------|------|
+| Champions | Recently purchased, frequent buyers with strong spending |
+| Loyal Customers | Consistent buyers with moderate purchase frequency |
+| Potential Loyalists | Recent customers who may become loyal |
+| At Risk | Previously active customers who have not purchased recently |
+| Bad Customers | Low spending, low frequency, and long inactivity |
+
+### Insight
+Customer segmentation enables businesses to **tailor marketing strategies for different customer groups**, improving overall marketing effectiveness.
+
+---
+
+# 5. Revenue Contribution by Customer Segments
+
+Revenue contribution varies significantly across different customer segments.
+
+### Key Observations
+- **Champions and Loyal Customers contribute the largest share of total revenue.**
+- **At Risk customers represent previously valuable customers who may churn.**
+- **Bad Customers contribute minimal revenue and show low engagement.**
+
+### Insight
+A relatively **small group of high-value customers drives a large portion of the revenue**, which is a common pattern in e-commerce businesses.
+
+---
+
+# 6. Business Recommendations
+
+### Focus on Champions
+- Offer **VIP benefits and exclusive deals**
+- Provide **early access to sales**
+- Reward loyalty with **special promotions**
+
+### Convert Potential Loyalists
+- Send **targeted marketing campaigns**
+- Offer **product recommendations**
+- Encourage repeat purchases through incentives
+
+### Re-engage At Risk Customers
+- Launch **win-back campaigns**
+- Provide **limited-time discounts**
+- Send **personalized reminder emails**
+
+### Reduce Marketing Spend on Low-Value Segments
+- Limit marketing resources for **Bad Customers**
+- Focus acquisition efforts on **higher-value segments**
+
+---
+
+# Key Takeaways
+
+- Customer spending is **unevenly distributed**, with high-value customers driving most of the revenue.
+- Many customers make **only a single purchase**, highlighting opportunities to improve retention.
+- **RFM segmentation helps businesses identify valuable customers and design targeted marketing strategies**.
+- Strategic engagement of high-value and at-risk customers can **significantly improve customer lifetime value and overall revenue**.
