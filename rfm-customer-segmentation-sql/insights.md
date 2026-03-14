@@ -1,15 +1,5 @@
 # RFM Customer Segmentation Insights
 
-## Dataset Information
-**Dataset:** Olist Brazilian E-commerce Dataset  
-**Source:** Kaggle  
-**Link:** https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce  
-
-The dataset contains real e-commerce transaction data from a Brazilian marketplace, including customer information, orders, and payments.  
-This analysis focuses on understanding customer purchasing behavior using **RFM (Recency, Frequency, Monetary) segmentation**.
-
----
-
 # 1. Customer Base Overview
 
 - The analysis includes **~96,000 unique customers**.
