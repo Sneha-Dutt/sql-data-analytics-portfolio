@@ -73,9 +73,9 @@ on p.order_id=o.order_id
 group by c.customer_unique_id
 ),cte2 as
 (
-select *, ntile(5) over(order by recency) as r_score,
-ntile(5) over(order by frequency desc) as f_score,
-ntile(5) over(order by monetory desc) as m_score
+select *, ntile(5) over (order by monetory desc) as m_score,
+ntile(5) over (order by frequency desc) as f_score,
+ntile(5) over (order by recency desc) as r_score
 from cte
 )
 select * from cte2;
@@ -84,32 +84,39 @@ select * from cte2;
 -- Create Customer Segments
 with cte as
 (
-select c.customer_unique_id, sum(p.payment_value) as monetory,
-datediff((select max(order_purchase_timestamp) from orders), max(o.order_purchase_timestamp)) as recency,
+select 
+c.customer_unique_id,
+sum(p.payment_value) as monetory,
+datediff(
+(select max(order_purchase_timestamp) from orders),
+max(o.order_purchase_timestamp)
+) as recency,
 count(distinct o.order_id) as frequency
-from customers c join orders o
-on c.customer_id=o.customer_id
+from customers c
+join orders o
+on c.customer_id = o.customer_id
 join payments p
-on p.order_id=o.order_id
+on p.order_id = o.order_id
 group by c.customer_unique_id
 ),
 cte2 as
 (
-select *, ntile(5) over(order by monetory desc) as m_score,
-ntile(5) over(order by frequency desc) as f_score,
-ntile(5) over(order by recency) as r_score
+select *,
+ntile(5) over (order by monetory desc) as m_score,
+ntile(5) over (order by frequency desc) as f_score,
+ntile(5) over (order by recency desc) as r_score
 from cte
 )
 select customer_unique_id,
 case
-when r_score>=4 and f_score>=4 then 'Champions'
-when r_score>=3 and f_score>=3 then 'Loyal Customers'
-when r_score>=3 and f_score<=2 then 'Potential Loyalists'
-when r_score<=2 and f_score>=3 then 'At Risk'
+when r_score >= 4 and f_score <=2 and m_score <=2 then 'Champions'
+when r_score >= 3 and f_score <= 3 then 'Loyal Customers'
+when r_score >= 4 and f_score >= 4 then 'Potential Loyalists'
+when r_score <= 2 and f_score >= 3 then 'At Risk'
+when r_score <= 2 and f_score <= 2 and m_score <= 2 then 'Bad Customers'
 else 'Others'
-end
-as segment
-from cte2;   
+end as segment
+from cte2;
 -- ------------------------------------------------------------------------------------------------------------------
 
 -- Revenue Contribution by Customer Segments
@@ -126,21 +133,21 @@ group by c.customer_unique_id
 ), cte2 as
 (
 select *, 
-ntile(5) over(order by recency) as r_score,
-ntile(5) over(order by monetory desc) as m_score,
-ntile(5) over(order by frequency desc) as f_score
+ntile(5) over (order by monetory desc) as m_score,
+ntile(5) over (order by frequency desc) as f_score,
+ntile(5) over (order by recency desc) as r_score
 from cte
 ), cte3 as
 (
 select *,
 case
-when r_score>=4 and f_score>=4 then 'Champions'
-when r_score>=3 and f_score>=3 then 'Loyal Customers'
-when r_score>=3 and f_score<=2 then 'Potential Loyalists'
-when r_score<=2 and f_score>=3 then 'At Risk'
+when r_score >= 4 and f_score <=2 and m_score <=2 then 'Champions'
+when r_score >= 3 and f_score <= 3 then 'Loyal Customers'
+when r_score >= 4 and f_score >= 4 then 'Potential Loyalists'
+when r_score <= 2 and f_score >= 3 then 'At Risk'
+when r_score <= 2 and f_score <= 2 and m_score <= 2 then 'Bad Customers'
 else 'Others'
-end
-as segment
+end as segment
 from cte2
 )
 select segment, round(sum(monetory),2) as revenue_contributed, count(*) as number_of_customers,
